@@ -430,6 +430,7 @@ const sumAllTheYears = function () {
   filmYears.forEach(sum => {
   sumYears += sum
 })
+return sumYears
 }
 
 console.log(sumAllTheYears());
@@ -438,14 +439,47 @@ console.log(sumAllTheYears());
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
+const searchByTitle = function (str) {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(str) === true)
+    console.log(movies[i]);
+  }
+}
+
+console.log(searchByTitle('Avengers'));
+
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+const objDivide = {
+  match: [],
+  unmatch: []
+}
+const searchAndDivide = function (str) {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(str) === true) {
+     objDivide.match.push(movies[i]);
+  } 
+  else {
+    objDivide.unmatch.push(movies[i]);
+  }
+}
+return objDivide
+}
+
+console.log(searchAndDivide('Lord'));
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
+const removeIndex = function (num) {
+  delete movies[num]
+  return movies
+}
+console.log(removeIndex(7));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
