@@ -179,6 +179,7 @@ console.log(whatDayIsIt());
       values: [3, 3, 4]
   }
 
+  COPIA DELLA FUNZIONE DI SOPRA PER COMODITA'
   const dice = function () {
   randDiceNum = Math.ceil(Math.random()*6)
   return randDiceNum
@@ -204,32 +205,32 @@ console.log(rollTheDices(7));
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+const millysec = 1000*60*60*24 
+const now = new Date();
+const howManyDays = function (d) {
+let dayMillisecDiff =  now.getTime() - d.getTime()
+return dayMillisecDiff/millysec
+}
 
-// const howManyDays = function (Date) {
-//   return 
-// }
-
-// console.log(howManyDays("July 1, 2023"));
+console.log(howManyDays(new Date('May 9, 2013')));
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-// const date = new Date()
-// date.getFullYear(2004);
-// d.setUTCMonth(1);
-// d.setUTCDate(29);
-// const currentDate 
-// console.log(currentDate);
+const date1 = new Date()
+const birthday = new Date('December 5, 1994')
+const birthdayEvent = "Oggi è il mio compleanno"
+const nonBirthdayEvent = "Oggi festeggiamo il mio Non-Compleanno!!!"
 
-// const birthdayEvent = "Oggi è il mio compleanno"
-// const nonBirthdayEvent = "Oggi festeggiamo il mio Non-Compleanno!!!"
-// const isTodayMyBirthday = function (myBirthday) {
-//   if (myBirthday === currentDate ) {
-//     return birthdayEvent
-//   } else {
-//     return nonBirthdayEvent
-//   } 
-// }
+const isTodayMyBirthday = function (myBirthday) {
+  if (date1.getMonth() === birthday.getMonth() && date1.getDate() === birthday.getDate()) {
+    return birthdayEvent
+  } else {
+    return nonBirthdayEvent
+  } 
+}
+
+console.log(isTodayMyBirthday());
 
 // Arrays & Oggetti
 
@@ -486,30 +487,73 @@ console.log(removeIndex(7));
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+const findId = function () {
+  const test = document.getElementById("container")
+}
+
+findId();
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+const findTdTag = function () {
+  const test2 = document.querySelectorAll("td")
+}
+
+findTdTag();
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
+const loopTd = function () {
+  const test2 = document.querySelectorAll("td")
+  for (let i = 0; i < test2.length; i++) {
+    console.log(test2[i]);
+  }
+}
+
+loopTd();
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+const bckgA = function () {
+  const link = document.querySelectorAll("a")
+  link.style.backgroundColor = "red";
+}
+bckgA();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+const newListElement = function () {
+  const trackNoOrdinaryList = document.getElementById("myList")
+  const noOrdinaryList = document.createElement("li")
+}
+
+newListElement();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+const removeListElement = function () {
+  const trackNoOrdinaryList = document.getElementById("myList")
+  childNodes.remove()
+}
+
+removeListElement();
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+const classGenerator4Tr = function () {
+  const tyrion = document.getElementsByTagName("tr").className= "trStyle";
+  return tyrion
+}
+
+classGenerator4Tr();
 
 // [EXTRA] JS Avanzato
 
@@ -524,6 +568,16 @@ console.log(removeIndex(7));
   ***
 
 */
+// let star = "*"; 
+// const halfTree = function (num) {
+//   for (let i = 0; i < num; i++) {
+    
+    
+//   }
+  
+// }
+
+// console.log(halfTree(7));
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -540,3 +594,11 @@ console.log(removeIndex(7));
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+// randomDivider = Math.ceil(Math.random()*400) + 1
+// const isItPrime = function (num) {
+//   if (num !==2 & % num === 0 && num % 1 === 0 && num % randomDivider !== 0) {
+//     console.log(`${num} è un numero primo`);
+//   }
+// }
+
+// isItPrime(7);
